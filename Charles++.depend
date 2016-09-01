@@ -1,0 +1,27 @@
+# depslib dependency file v1.0
+1472760239 source:c:\users\jelle besseling\desktop\ip schijt\charles++\main.cpp
+	<iostream>
+	<string.h>
+	"Robot.h"
+	"cli_control.h"
+
+1472760363 c:\users\jelle besseling\desktop\ip schijt\charles++\include\robot.h
+	<stdlib.h>
+	"cli_control.h"
+
+1472760320 c:\users\jelle besseling\desktop\ip schijt\charles++\include\cli_control.h
+
+1472760354 source:c:\users\jelle besseling\desktop\ip schijt\charles++\src\cli_control.cpp
+	"cli_control.h"
+	<iostream>
+	<sstream>
+	<stdexcept>
+
+1472760359 source:c:\users\jelle besseling\desktop\ip schijt\charles++\src\robot.cpp
+	<iostream>
+	<stdexcept>
+	<windows.h>
+	<unistd.h>
+	"Robot.h"
+	"cli_control.h"
+
