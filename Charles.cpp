@@ -16,6 +16,7 @@
 
 #include <iostream>
 #include <string.h>
+#include <ctime>
 
 #include "Robot.h"
 #include "cli_control.h"
@@ -37,7 +38,7 @@ void swap_ball ()
     if (on_ball ())
         get_ball () ;
     else
-	      put_ball () ;
+	    put_ball () ;
     step () ;
 }
 
@@ -67,7 +68,7 @@ void make_block ()
     const int width  = rand () % (WereldBreedte / 2) + 5;
     const int height = rand () % (WereldHoogte  / 2) + 2;
     place_rectangle (left,bottom,width,height) ;
-    create_ball (left, 0) ;
+    create_ball (left, WereldHoogte-2) ;
 }
 // turn_north makes Charles look north
 void turn_north ()
@@ -217,6 +218,9 @@ int main(int argc, char* argv[]) {
   } else {
     set_sleep(1000);
   }
+
+  srand(time(NULL));
+
   cout << "Welcome by Charles++, because we don't have a GUI interface, you can now choose a function to run." << endl;
   cout << "1. Assignment 1: clean_string_with_balls ()" << endl;
   cout << "2. Assignment 2: clean_chaos_with_balls ()" << endl;

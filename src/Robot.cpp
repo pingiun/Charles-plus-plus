@@ -16,7 +16,6 @@
 
 #include <iostream>
 #include <stdexcept>
-#include <ctime>
 
 #ifdef _WIN32
 #include <windows.h>
@@ -145,25 +144,30 @@ bool Robot::on_ball() {
 }
 
 void Robot::place_rectangle(int x, int y, int width, int height) {
-  for (int i = x; i<=x+width; i++) {
-    cli->walls[x][y] = true;
-    cli->walls[x][y+height] = true;
+  y = (WereldHoogte - 3) - (y - 1) - height;
+  x = x - 1;
+  for (int i = x; i < x + width; i++) {
+    cli->walls[i][y] = true;
+    cli->walls[i][y+height] = true;
   };
 
-  for (int i = y; i<=y+height; i++) {
-    cli->walls[y][i] = true;
-    cli->walls[y+width][i] = true;
+  for (int i = y; i <= y + height; i++) {
+    cli->walls[x][i] = true;
+    cli->walls[x+width][i] = true;
   };
   ::_draw();
 }
 
 void Robot::place_walls(int x, int y, int n, bool horizontal) {
+  x = x - 1;
   if (horizontal) {
-    for (int i = y ; i <= y + n ; i++) {
+    y = (WereldHoogte - 3) - (y - 1);
+    for (int i = x ; i <= x + n ; i++) {
       cli->walls[i][y] = true;
     }
   } else {
-    for (int i = x; i <= x+n ; i++) {
+    y = (WereldHoogte - 3) - (y - 1) - n;
+    for (int i = y; i < y + n ; i++) {
       cli->walls[x][i] = true;
     }
   }
@@ -241,6 +245,12 @@ void _draw() {
   }
 }
 void create_ball(int xcor, int ycor) {
+  ycor = (WereldHoogte - 3) - (ycor - 1);
+  xcor = xcor - 1;
+  Robot(&c)._put_ball(xcor, ycor);
+  _draw();
+}
+void _put_ball(int xcor, int ycor) {
   Robot(&c)._put_ball(xcor, ycor);
 }
 void _put_wall(int xcor, int ycor) {
@@ -252,23 +262,22 @@ void _position_robot(int xcor, int ycor) {
 
 void make_string_with_balls() {
   for (int i = 0; i < 48; i++) {
-    create_ball(i, 0);
-    create_ball(i, 27);
+    _put_ball(i, 0);
+    _put_ball(i, 27);
   }
   for (int i = 1; i < 27; i++) {
-    create_ball(0, i);
-    create_ball(47, i);
+    _put_ball(0, i);
+    _put_ball(47, i);
   }
   _draw();
 }
 
 void make_chaos_with_balls() {
-  srand(time(NULL));
   int lowest_row = (WereldHoogte - 2) - (rand () % (WereldHoogte / 2) + 3);
   for (int row = 0; row < lowest_row; row++) {
     int width = (WereldBreedte - 3) - (rand () % (WereldBreedte/2) + 1);
     for (int column = WereldBreedte - 3; column > width; column--) {
-      create_ball(column, row);
+      _put_ball(column, row);
     }
   }
   _draw();

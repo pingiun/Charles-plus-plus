@@ -1,16 +1,16 @@
 // Charles++ a better version of Charles
 // Copyright (C) 2016 Jelle Besseling
-// 
+//
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
-// 
+//
 // This program is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
-// 
+//
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
@@ -42,6 +42,7 @@ void place_walls(int x, int y, int n, bool horizontal);
 void reset();
 
 void create_ball(int xcor, int ycor);
+void _put_ball(int, int);
 void _put_wall(int xcor, int ycor);
 void _position_robot(int xcor, int ycor);
 void _draw();
