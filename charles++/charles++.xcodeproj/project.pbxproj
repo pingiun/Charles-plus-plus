@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		63EC41FF1D79937E00AFAA73 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63EC41FE1D79937E00AFAA73 /* main.cpp */; };
+		63EC42111D7993BE00AFAA73 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 63EC420F1D7993BE00AFAA73 /* README.md */; };
+		63EC42141D7993CF00AFAA73 /* Charles.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63EC42131D7993CF00AFAA73 /* Charles.cpp */; };
+		63EC421A1D79942600AFAA73 /* cli_control.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63EC42181D79942600AFAA73 /* cli_control.cpp */; };
+		63EC421B1D79942600AFAA73 /* Robot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63EC42191D79942600AFAA73 /* Robot.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +27,13 @@
 
 /* Begin PBXFileReference section */
 		63EC41FB1D79937E00AFAA73 /* charles++ */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "charles++"; sourceTree = BUILT_PRODUCTS_DIR; };
-		63EC41FE1D79937E00AFAA73 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		63EC420F1D7993BE00AFAA73 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		63EC42121D7993C900AFAA73 /* LICENCE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENCE; sourceTree = "<group>"; };
+		63EC42131D7993CF00AFAA73 /* Charles.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Charles.cpp; sourceTree = "<group>"; };
+		63EC42151D7993F400AFAA73 /* cli_control.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = cli_control.h; path = include/cli_control.h; sourceTree = "<group>"; };
+		63EC42161D7993F400AFAA73 /* Robot.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Robot.h; path = include/Robot.h; sourceTree = "<group>"; };
+		63EC42181D79942600AFAA73 /* cli_control.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cli_control.cpp; path = src/cli_control.cpp; sourceTree = "<group>"; };
+		63EC42191D79942600AFAA73 /* Robot.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Robot.cpp; path = src/Robot.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,7 +50,11 @@
 		63EC41F21D79937E00AFAA73 = {
 			isa = PBXGroup;
 			children = (
-				63EC41FD1D79937E00AFAA73 /* charles++ */,
+				63EC42131D7993CF00AFAA73 /* Charles.cpp */,
+				63EC421C1D79943800AFAA73 /* src */,
+				63EC42171D79941100AFAA73 /* include */,
+				63EC42121D7993C900AFAA73 /* LICENCE */,
+				63EC420F1D7993BE00AFAA73 /* README.md */,
 				63EC41FC1D79937E00AFAA73 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,12 +67,22 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		63EC41FD1D79937E00AFAA73 /* charles++ */ = {
+		63EC42171D79941100AFAA73 /* include */ = {
 			isa = PBXGroup;
 			children = (
-				63EC41FE1D79937E00AFAA73 /* main.cpp */,
+				63EC42151D7993F400AFAA73 /* cli_control.h */,
+				63EC42161D7993F400AFAA73 /* Robot.h */,
 			);
-			path = "charles++";
+			name = include;
+			sourceTree = "<group>";
+		};
+		63EC421C1D79943800AFAA73 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				63EC42181D79942600AFAA73 /* cli_control.cpp */,
+				63EC42191D79942600AFAA73 /* Robot.cpp */,
+			);
+			name = src;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -118,7 +141,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63EC41FF1D79937E00AFAA73 /* main.cpp in Sources */,
+				63EC421B1D79942600AFAA73 /* Robot.cpp in Sources */,
+				63EC42141D7993CF00AFAA73 /* Charles.cpp in Sources */,
+				63EC42111D7993BE00AFAA73 /* README.md in Sources */,
+				63EC421A1D79942600AFAA73 /* cli_control.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
