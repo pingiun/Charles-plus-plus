@@ -1,21 +1,22 @@
 // Charles++ a better version of Charles
 // Copyright (C) 2016 Jelle Besseling
-// 
+//
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
-// 
+//
 // This program is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
-// 
+//
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <iostream>
 #include <stdexcept>
+#include <ctime>
 
 #ifdef _WIN32
 #include <windows.h>
@@ -262,6 +263,13 @@ void make_string_with_balls() {
 }
 
 void make_chaos_with_balls() {
-  // TODO: implement
+  srand(time(NULL));
+  int lowest_row = (WereldHoogte - 2) - (rand () % (WereldHoogte / 2) + 3);
+  for (int row = 0; row < lowest_row; row++) {
+    int width = (WereldBreedte - 3) - (rand () % (WereldBreedte/2) + 1);
+    for (int column = WereldBreedte - 3; column > width; column--) {
+      create_ball(column, row);
+    }
+  }
   _draw();
 }
