@@ -19,7 +19,7 @@
 
 #include <stdlib.h>
 
-#include "cli_control.h"
+#include "./cli_control.h"
 
 // Variabelen
 const int WereldBreedte = 50;
