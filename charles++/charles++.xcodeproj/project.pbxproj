@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6378BC361D7983F600DCE205 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6378BC351D7983F600DCE205 /* main.cpp */; };
+		6378BC3D1D79840500DCE205 /* Charles.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6378BC3C1D79840500DCE205 /* Charles.cpp */; };
+		6378BC451D79841000DCE205 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 6378BC421D79841000DCE205 /* Makefile */; };
+		6378BC461D79841000DCE205 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 6378BC431D79841000DCE205 /* README.md */; };
+		6378BC541D798A4F00DCE205 /* cli_control.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6378BC521D798A4F00DCE205 /* cli_control.cpp */; };
+		6378BC551D798A4F00DCE205 /* Robot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6378BC531D798A4F00DCE205 /* Robot.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +28,16 @@
 
 /* Begin PBXFileReference section */
 		6378BC321D7983F600DCE205 /* charles++ */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "charles++"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6378BC351D7983F600DCE205 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		6378BC3C1D79840500DCE205 /* Charles.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Charles.cpp; path = ../../Charles.cpp; sourceTree = "<group>"; };
+		6378BC3E1D79841000DCE205 /* Charles++.cbp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "Charles++.cbp"; path = "../../Charles++.cbp"; sourceTree = "<group>"; };
+		6378BC3F1D79841000DCE205 /* Charles++.depend */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Charles++.depend"; path = "../../Charles++.depend"; sourceTree = "<group>"; };
+		6378BC411D79841000DCE205 /* LICENCE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENCE; path = ../../LICENCE; sourceTree = "<group>"; };
+		6378BC421D79841000DCE205 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; name = Makefile; path = ../../Makefile; sourceTree = "<group>"; };
+		6378BC431D79841000DCE205 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../README.md; sourceTree = "<group>"; };
+		6378BC501D798A3D00DCE205 /* cli_control.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cli_control.h; sourceTree = "<group>"; };
+		6378BC511D798A3D00DCE205 /* Robot.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Robot.h; sourceTree = "<group>"; };
+		6378BC521D798A4F00DCE205 /* cli_control.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cli_control.cpp; sourceTree = "<group>"; };
+		6378BC531D798A4F00DCE205 /* Robot.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Robot.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +70,34 @@
 		6378BC341D7983F600DCE205 /* charles++ */ = {
 			isa = PBXGroup;
 			children = (
-				6378BC351D7983F600DCE205 /* main.cpp */,
+				6378BC561D798A8700DCE205 /* include */,
+				6378BC581D798AA700DCE205 /* src */,
+				6378BC3E1D79841000DCE205 /* Charles++.cbp */,
+				6378BC3F1D79841000DCE205 /* Charles++.depend */,
+				6378BC411D79841000DCE205 /* LICENCE */,
+				6378BC421D79841000DCE205 /* Makefile */,
+				6378BC431D79841000DCE205 /* README.md */,
+				6378BC3C1D79840500DCE205 /* Charles.cpp */,
 			);
 			path = "charles++";
+			sourceTree = "<group>";
+		};
+		6378BC561D798A8700DCE205 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				6378BC501D798A3D00DCE205 /* cli_control.h */,
+				6378BC511D798A3D00DCE205 /* Robot.h */,
+			);
+			name = include;
+			sourceTree = "<group>";
+		};
+		6378BC581D798AA700DCE205 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				6378BC521D798A4F00DCE205 /* cli_control.cpp */,
+				6378BC531D798A4F00DCE205 /* Robot.cpp */,
+			);
+			name = src;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -118,7 +156,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6378BC361D7983F600DCE205 /* main.cpp in Sources */,
+				6378BC551D798A4F00DCE205 /* Robot.cpp in Sources */,
+				6378BC541D798A4F00DCE205 /* cli_control.cpp in Sources */,
+				6378BC461D79841000DCE205 /* README.md in Sources */,
+				6378BC451D79841000DCE205 /* Makefile in Sources */,
+				6378BC3D1D79840500DCE205 /* Charles.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,7 +170,7 @@
 		6378BC371D7983F600DCE205 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -162,9 +204,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
+				INCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "";
+				LIBRARY_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "";
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -172,7 +218,7 @@
 		6378BC381D7983F600DCE205 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -200,8 +246,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
+				INCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "";
+				LIBRARY_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_CFLAGS = "";
 				SDKROOT = macosx;
 			};
 			name = Release;
