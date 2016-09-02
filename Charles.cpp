@@ -1,16 +1,16 @@
 // Charles++ a better version of Charles
 // Copyright (C) 2016 Jelle Besseling
-// 
+//
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
-// 
+//
 // This program is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
-// 
+//
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
@@ -205,13 +205,17 @@ void test ()
 // =========================================================================
 
 int main(int argc, char* argv[]) {
-  int sleeptime = atoi(argv[1]);
-  if (sleeptime != 0) {
-    cout << "Sleep time: " << sleeptime << endl;
-    set_sleep(sleeptime);
+  if (argc == 2){
+    int sleeptime = atoi(argv[1]);
+    if (sleeptime != 0) {
+      cout << "Sleep time: " << sleeptime << endl;
+      set_sleep(sleeptime);
+    } else {
+      cout << "Please provide an integer for the sleep time." << endl;
+      return 1;
+    }
   } else {
-    cout << "Please provide an integer for the sleep time." << endl;
-    return 1;
+    set_sleep(1000);
   }
   cout << "Welcome by Charles++, because we don't have a GUI interface, you can now choose a function to run." << endl;
   cout << "1. Assignment 1: clean_string_with_balls ()" << endl;
