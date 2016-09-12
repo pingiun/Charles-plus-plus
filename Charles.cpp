@@ -53,10 +53,15 @@ void put_a_ball_somewhere ()
 // make_church creates a Church-like shape of walls
 void make_church ()
 {
-    place_rectangle (10,10,20,8) ;
-    place_rectangle (10,18, 4,4) ;
-    place_walls (12,22,4,false) ;
-    place_walls (11,25,2,true) ;
+    const int lane   = 2 + rand () % (WereldHoogte / 5) ;
+    const int street = 2 + rand () % (WereldBreedte / 5) ;
+    const int width  = 3 + rand () % (WereldBreedte / 2) ;
+    const int height = 2 + rand () % (WereldHoogte / 3) ;
+    place_rectangle (street,lane,width,height) ;
+    place_rectangle (street + 2,lane + height, 2 + width / 3, 2 + height / 3) ;
+    place_walls (street + 3 + width / 6,lane + height + height / 3 + 3,4,false) ;
+    place_walls (street + 2 + width / 6,lane + height + height / 3 + 5,2,true) ;
+    create_ball (street, WereldHoogte - 2) ;
 }
 
 // make_block creates an arbitrary block inside Charles' world and places a ball
@@ -155,7 +160,7 @@ void find_ball ()
     sweep_lanes () ;
 }
 
-// here starts the part with code to be completed by the students
+// here starts the part with code to be completed by the students for assignment 1
 
 // Name / student number / study student 1 :
 // Name / student number / study student 2 :
@@ -196,6 +201,54 @@ void search_the_ball ()
 	find_ball () ;
 }
 
+// here starts the part with code to be completed by the students for assignment 2
+
+// Name / student number / study student 1 :
+// Name / student number / study student 2 :
+// ==========================================================================
+
+// give one or more comment lines about what will happen in this function
+void follow_path ()
+{
+    // give your own code completion
+}
+
+// give one or more comment lines about what will happen in this function
+void hansl_and_gretl ()
+{
+	make_path_with_balls() ;
+	follow_path () ;
+}
+
+// give one or more comment lines about what will happen in this function
+// note that you are allowed to add formal parameters to fill_cave_with_balls if that is necessary for your solution
+void fill_cave_with_balls ()
+{
+    // give your own code completion
+}
+
+// give one or more comment lines about what will happen in this function
+void cave ()
+{
+	// if necessary for your solution, you are allowed to give actual parameters to fill_cave_with_balls
+	fill_cave_with_balls () ;
+	fill_cave_with_balls () ;
+}
+
+// give one or more comment lines about what will happen in this function
+void start_cave ()
+{
+    make_cave () ;
+    cave () ;
+}
+
+// give one or more comment lines about what will happen in this function
+void rondje_om_de_kerk ()
+{
+    make_church () ;
+    // give your own code completion
+}
+
 // For testing purposes, you can define your own function here:
 void test ()
 {
@@ -222,11 +275,18 @@ int main(int argc, char* argv[]) {
   srand(time(NULL));
 
   cout << "Welcome by Charles++, because we don't have a GUI interface, you can now choose a function to run." << endl;
-  cout << "1. Assignment 1: clean_string_with_balls ()" << endl;
-  cout << "2. Assignment 2: clean_chaos_with_balls ()" << endl;
+  cout << "=============" << endl;
+  cout << "Assignment 1:" << endl;
+  cout << "1. Assignment 1.1: clean_string_with_balls ()" << endl;
+  cout << "2. Assignment 1.2: clean_chaos_with_balls ()" << endl;
   cout << "3. Example search the ball: search_the_ball ()" << endl;
   cout << "4. Bonus: around_the_block ()" << endl;
-  cout << "5. Test function: test ()" << endl;
+  cout << "=============" << endl;
+  cout << "Assignment 2:" << endl;
+  cout << "5. Assignment 2.1: follow_path ()" << endl;
+  cout << "6. Assignment 2.2: fill_cave_with_balls ()" << endl;
+  cout << "7. Bonus: rondje_om_de_kerk ()" << endl;
+  cout << "8. Test function: test ()" << endl;
   while (true) {
     cout << "Choose one of the options 1-5" << endl;
     int option;
@@ -249,6 +309,18 @@ int main(int argc, char* argv[]) {
       around_the_block();
       return 0;
     case 5:
+      _draw();
+      hansl_and_gretl();
+      return 0;
+    case 6:
+      _draw();
+      start_cave();
+      return 0;
+    case 7:
+      _draw();
+      rondje_om_de_kerk();
+      return 0;
+    case 8:
       _draw();
       test();
       return 0;
