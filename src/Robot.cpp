@@ -174,6 +174,53 @@ void Robot::place_walls(int x, int y, int n, bool horizontal) {
   ::_draw();
 }
 
+void Robot::make_path_with_balls(){
+	for (int ix = 1; ix < WereldBreedte-8; ix++)
+        cli->balls[ix - 1][(WereldHoogte - 3) - (WereldHoogte-2 - 1)]  = true;
+	for (int iy = WereldHoogte-2; iy > WereldHoogte/2; iy--)
+        cli->balls[WereldBreedte-9][(WereldHoogte - 3) - (iy - 1)] = true;
+	for (int ix = WereldBreedte-8; ix >= 1; ix--)
+        cli->balls[ix - 1][(WereldHoogte - 3) - (WereldHoogte/2 - 1)]  = true;
+	for (int iy = WereldHoogte/2; iy >= 4; iy--)
+        cli->balls[0][(WereldHoogte - 3) - (iy - 1)] = true;
+	for (int ix = 1; ix <= WereldBreedte/3; ix++)
+        cli->balls[ix - 1][(WereldHoogte - 3) - (4 - 1)]               = true;
+	for (int iy = 4; iy <= WereldHoogte * 2 / 3; iy++)
+        cli->balls[WereldBreedte/3 - 1][(WereldHoogte - 3) - (iy - 1)] = true;
+    ::_draw();
+}
+
+void Robot::make_cave() {
+    const int marge       = WereldHoogte / 3 ;
+    const int max_breedte = WereldBreedte / 10 ;
+
+    for (int ix = 2; ix <= WereldBreedte-3; )
+    {
+        const int breedte = rand() % (min (max_breedte, WereldBreedte - ix - 2)) + 1 ;
+        const int dy = rand() % marge + 2 ;
+        int y ;
+        y = dy ;
+        for (int i=1; i <= breedte; i++)
+        {
+            cli->walls[ix - 1][(WereldHoogte - 3) - (y - 1)] = true ;
+            ix++ ;
+        }
+    }
+    for (int ix = 2; ix <= WereldBreedte-3; )
+    {
+        const int breedte = rand() % (min (max_breedte, WereldBreedte - ix - 2)) + 1 ;
+        const int dy = rand() % marge + 2 ;
+        int y ;
+        y = WereldHoogte - dy - 1 ;
+        for (int i=1; i <= breedte; i++)
+        {
+            cli->walls[ix - 1][(WereldHoogte - 3) - (y - 1)] = true ;
+            ix++ ;
+        }
+    }
+    ::_draw();
+}
+
 static cli_control c;
 void steps(int steps) {
   for (int i = 0; i < steps; i++) {
@@ -281,4 +328,12 @@ void make_chaos_with_balls() {
     }
   }
   _draw();
+}
+
+void make_path_with_balls() {
+    Robot(&c).make_path_with_balls();
+}
+
+void make_cave() {
+    Robot(&c).make_cave();
 }

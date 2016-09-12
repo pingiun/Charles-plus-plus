@@ -59,7 +59,7 @@ void make_church ()
     const int height = 2 + rand () % (WereldHoogte / 3) ;
     place_rectangle (street,lane,width,height) ;
     place_rectangle (street + 2,lane + height, 2 + width / 3, 2 + height / 3) ;
-    place_walls (street + 3 + width / 6,lane + height + height / 3 + 3,4,false) ;
+    place_walls (street + 3 + width / 6,lane + height + height / 3 + 2,4,false) ;
     place_walls (street + 2 + width / 6,lane + height + height / 3 + 5,2,true) ;
     create_ball (street, WereldHoogte - 2) ;
 }
@@ -286,6 +286,7 @@ int main(int argc, char* argv[]) {
   cout << "5. Assignment 2.1: follow_path ()" << endl;
   cout << "6. Assignment 2.2: fill_cave_with_balls ()" << endl;
   cout << "7. Bonus: rondje_om_de_kerk ()" << endl;
+  cout << "=============" << endl;
   cout << "8. Test function: test ()" << endl;
   while (true) {
     cout << "Choose one of the options 1-5" << endl;

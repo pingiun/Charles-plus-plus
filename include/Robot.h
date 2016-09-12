@@ -38,6 +38,8 @@ void put_ball();
 void steps(int steps);
 void place_rectangle(int x, int y, int width, int height);
 void place_walls(int x, int y, int n, bool horizontal);
+void make_path_with_balls();
+void make_cave();
 
 void reset();
 
@@ -67,6 +69,8 @@ class Robot {
 
   void place_rectangle(int x, int y, int width, int height);
   void place_walls(int x, int y, int n, bool horizontal);
+  void make_path_with_balls();
+  void make_cave();
 
   void reset();
 
