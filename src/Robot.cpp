@@ -19,9 +19,7 @@
 
 #ifdef _WIN32
 #include <windows.h>
-#endif // _WIN32
-
-#ifdef __unix__
+#else
 #include <unistd.h>
 #endif // __unix__
 
@@ -42,8 +40,7 @@ void Robot::universal_sleep() {
 #ifdef _WIN32
   Sleep(cli->milli);
   return;
-#endif
-#ifdef __unix__
+#else
   usleep(cli->milli * 1000);
   return;
 #endif
