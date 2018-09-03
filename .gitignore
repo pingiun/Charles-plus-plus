@@ -3,3 +3,5 @@ obj
 *.layout
 *.depend
 *.DS_Store
+Charles-plus-plus.xcodeproj/project.xcworkspace/xcuserdata
+Charles-plus-plus.xcodeproj/xcuserdata/*.xcuserdatad/

@@ -259,73 +259,69 @@ void test ()
 // =========================================================================
 
 int main(int argc, char* argv[]) {
-  if (argc == 2){
-    int sleeptime = atoi(argv[1]);
-    if (sleeptime != 0) {
-      cout << "Sleep time: " << sleeptime << endl;
-      set_sleep(sleeptime);
+    if (argc == 2){
+        int sleeptime = atoi(argv[1]);
+        if (sleeptime != 0) {
+            cout << "Sleep time: " << sleeptime << endl;
+            set_sleep(sleeptime);
+        } else {
+            cout << "Please provide an integer for the sleep time." << endl;
+            return 1;
+        }
     } else {
-      cout << "Please provide an integer for the sleep time." << endl;
-      return 1;
+        set_sleep(1000);
     }
-  } else {
-    set_sleep(1000);
-  }
 
-  srand(time(NULL));
+    srand((int) time(NULL));
 
-  cout << "Welcome by Charles++, because we don't have a GUI interface, you can now choose a function to run." << endl;
-  cout << "=============" << endl;
-  cout << "Assignment 1:" << endl;
-  cout << "1. Assignment 1.1: clean_string_with_balls ()" << endl;
-  cout << "2. Assignment 1.2: clean_chaos_with_balls ()" << endl;
-  cout << "3. Example search the ball: search_the_ball ()" << endl;
-  cout << "4. Bonus: around_the_block ()" << endl;
-  cout << "=============" << endl;
-  cout << "Assignment 2:" << endl;
-  cout << "5. Assignment 2.1: follow_path ()" << endl;
-  cout << "6. Assignment 2.2: fill_cave_with_balls ()" << endl;
-  cout << "7. Bonus: rondje_om_de_kerk ()" << endl;
-  cout << "=============" << endl;
-  cout << "8. Test function: test ()" << endl;
-  while (true) {
-    cout << "Choose one of the options 1-5" << endl;
-    int option;
-    cin >> option;
-    switch (option){
-    case 1:
-      _draw();
-      clean_string_with_balls();
-      return 0;
-    case 2:
-      _draw();
-      clean_chaos_with_balls();
-      return 0;
-    case 3:
-      _draw();
-      search_the_ball();
-      return 0;
-    case 4:
-      _draw();
-      around_the_block();
-      return 0;
-    case 5:
-      _draw();
-      hansl_and_gretl();
-      return 0;
-    case 6:
-      _draw();
-      start_cave();
-      return 0;
-    case 7:
-      _draw();
-      rondje_om_de_kerk();
-      return 0;
-    case 8:
-      _draw();
-      test();
-      return 0;
+    cout << "Welcome by Charles++, because we don't have a GUI interface, you can now choose a function to run." << endl;
+    cout << "=============" << endl;
+    cout << "Assignment 1:" << endl;
+    cout << "1. Assignment 1.1: clean_string_with_balls ()" << endl;
+    cout << "2. Assignment 1.2: clean_chaos_with_balls ()" << endl;
+    cout << "3. Example search the ball: search_the_ball ()" << endl;
+    cout << "4. Bonus: around_the_block ()" << endl;
+    cout << "=============" << endl;
+    cout << "Assignment 2:" << endl;
+    cout << "5. Assignment 2.1: follow_path ()" << endl;
+    cout << "6. Assignment 2.2: fill_cave_with_balls ()" << endl;
+    cout << "7. Bonus: rondje_om_de_kerk ()" << endl;
+    cout << "=============" << endl;
+    cout << "8. Test function: test ()" << endl;
+    
+    while (true) {
+        cout << "Choose one of the options 1-5" << endl;
+        int option;
+        cin >> option;
+        
+        switch (option){
+        case 1:
+            clean_string_with_balls();
+            return 0;
+        case 2:
+            clean_chaos_with_balls();
+            return 0;
+        case 3:
+            search_the_ball();
+            return 0;
+        case 4:
+            around_the_block();
+            return 0;
+        case 5:
+            hansl_and_gretl();
+            return 0;
+        case 6:
+            start_cave();
+            return 0;
+        case 7:
+            rondje_om_de_kerk();
+            return 0;
+        case 8:
+            test();
+            return 0;
+        default:
+            cout << "Invalid option, try again" << endl;
+        }
     }
-  }
-  return 0;
+    return 0;
 }
